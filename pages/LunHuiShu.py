@@ -61,7 +61,7 @@ class Lunhuishu(Base):
         '''不填写姓名'''
         self.clear(self.ele_name)
         self.click_ljcs()
-        time.sleep(0.5)
+        time.sleep(0.3)
 
     def short_name(self):
         '''名字太短'''
