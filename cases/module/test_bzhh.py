@@ -117,8 +117,11 @@ class TestBzZiHeHun():
         bzhh.open("/bazihehun/index?channel=online_paytest")
         bzhh.yl_pay()
         acturl_tips = bzhh.get_title()
-        expect_title = "银联在线支付-银行卡综合性网上交易转接清算平台！"
-        assert acturl_tips == expect_title
+        if acturl_tips == 'Unionpay Online Payment-Comprehensive online trading transfer and liquidation platform!':
+            assert True
+        else:
+            expect_title = "银联在线支付-银行卡综合性网上交易转接清算平台！"
+            assert acturl_tips == expect_title
 
     def test_15(self, bzhh:Bazihehun):
         '''调起paypal支付是否正常'''
@@ -158,8 +161,11 @@ class TestBzZiHeHun():
         bzhh.open("/bazihehun/index?channel=online_paytest")
         bzhh.dd_yl_pay()
         acturl_tips = bzhh.get_title()
-        expect_title = "银联在线支付-银行卡综合性网上交易转接清算平台！"
-        assert acturl_tips == expect_title
+        if acturl_tips == 'Unionpay Online Payment-Comprehensive online trading transfer and liquidation platform!':
+            assert True
+        else:
+            expect_title = "银联在线支付-银行卡综合性网上交易转接清算平台！"
+            assert acturl_tips == expect_title
 
 
     def test_20(self, bzhh:Bazihehun):

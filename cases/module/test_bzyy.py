@@ -69,8 +69,11 @@ class TestBaZiYinYuan():
         bzyy.open("/baziyinyuan/index?channel=online_paytest")
         bzyy.yl_pay()
         acturl_title = bzyy.get_title()
-        expect_title = "银联在线支付-银行卡综合性网上交易转接清算平台！"
-        assert acturl_title == expect_title
+        if acturl_title == 'Unionpay Online Payment-Comprehensive online trading transfer and liquidation platform!':
+            assert True
+        else:
+            expect_title = "银联在线支付-银行卡综合性网上交易转接清算平台！"
+            assert acturl_title == expect_title
 
     def test_09(self, bzyy:Baziyinyuan):
         '''调起paypal支付是否正常'''
@@ -110,8 +113,11 @@ class TestBaZiYinYuan():
         bzyy.open("/baziyinyuan/index?channel=online_paytest")
         bzyy.dd_yl_pay()
         acturl_title = bzyy.get_title()
-        expect_title = "银联在线支付-银行卡综合性网上交易转接清算平台！"
-        assert acturl_title == expect_title
+        if acturl_title == 'Unionpay Online Payment-Comprehensive online trading transfer and liquidation platform!':
+            assert True
+        else:
+            expect_title = "银联在线支付-银行卡综合性网上交易转接清算平台！"
+            assert acturl_title == expect_title
 
     def test_14(self, bzyy:Baziyinyuan):
         '''调起历史订单的paypal支付是否正常'''

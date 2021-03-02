@@ -74,8 +74,11 @@ class TestLunHuiShu():
         lhs.open("/lunhuishu/index?channel=online_paytest")
         lhs.yl_pay()
         acturl_title = lhs.get_title()
-        expect_title = "银联在线支付-银行卡综合性网上交易转接清算平台！"
-        assert acturl_title == expect_title
+        if acturl_title == 'Unionpay Online Payment-Comprehensive online trading transfer and liquidation platform!':
+            assert True
+        else:
+            expect_title = "银联在线支付-银行卡综合性网上交易转接清算平台！"
+            assert acturl_title == expect_title
 
     def test_10(self, lhs:Lunhuishu):
         '''调起paypal支付是否正常'''
@@ -115,9 +118,11 @@ class TestLunHuiShu():
         lhs.open("/lunhuishu/index?channel=online_paytest")
         lhs.dd_yl_pay()
         acturl_title = lhs.get_title()
-        expect_title = "银联在线支付-银行卡综合性网上交易转接清算平台！"
-        assert acturl_title == expect_title
-
+        if acturl_title == 'Unionpay Online Payment-Comprehensive online trading transfer and liquidation platform!':
+            assert True
+        else:
+            expect_title = "银联在线支付-银行卡综合性网上交易转接清算平台！"
+            assert acturl_title == expect_title
     def test_15(self, lhs:Lunhuishu):
         '''调起历史订单的paypal支付是否正常'''
         lhs.open("/lunhuishu/index?channel=online_paytest")

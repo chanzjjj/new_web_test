@@ -67,8 +67,11 @@ class TestZhanWeiZhongJingPi():
         zwzjp.open("/zwzjingpi/index?channel=online_paytest")
         zwzjp.yl_pay()
         acturl_title = zwzjp.get_title()
-        expect_title = "银联在线支付-银行卡综合性网上交易转接清算平台！"
-        assert acturl_title == expect_title
+        if acturl_title == 'Unionpay Online Payment-Comprehensive online trading transfer and liquidation platform!':
+            assert True
+        else:
+            expect_title = "银联在线支付-银行卡综合性网上交易转接清算平台！"
+            assert acturl_title == expect_title
 
     def test_09(self, zwzjp:Zhanweizhongjingpi):
         '''调起paypal支付是否正常'''
@@ -108,8 +111,11 @@ class TestZhanWeiZhongJingPi():
         zwzjp.open("/zwzjingpi/index?channel=online_paytest")
         zwzjp.dd_yl_pay()
         acturl_title = zwzjp.get_title()
-        expect_title = "银联在线支付-银行卡综合性网上交易转接清算平台！"
-        assert acturl_title == expect_title
+        if acturl_title == 'Unionpay Online Payment-Comprehensive online trading transfer and liquidation platform!':
+            assert True
+        else:
+            expect_title = "银联在线支付-银行卡综合性网上交易转接清算平台！"
+            assert acturl_title == expect_title
 
     def test_14(self, zwzjp:Zhanweizhongjingpi):
         '''调起历史订单的paypal支付是否正常'''
