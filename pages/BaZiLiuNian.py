@@ -104,6 +104,7 @@ class Baziliunian(Base):
     def normal_information(self):
         '''填写正常的信息'''
         self.click_sy_ljcs()
+        self.clear(self.ele_name)
         self.input_name('若云')
         self.choose_birthday()
         self.click_ljcs()
@@ -113,7 +114,7 @@ class Baziliunian(Base):
         '''微信支付'''
         self.normal_information()
         time.sleep(30)
-        js = "var q=document.documentElement.scrollTop=500"
+        js = "var q=document.documentElement.scrollTop=700"
         self.driver.execute_script(js)  # 将页面往下滑动
         self.click_wechat_pay()
         time.sleep(2)
@@ -122,7 +123,7 @@ class Baziliunian(Base):
         '''支付宝支付'''
         self.normal_information()
         time.sleep(30)
-        js = "var q=document.documentElement.scrollTop=500"
+        js = "var q=document.documentElement.scrollTop=700"
         self.driver.execute_script(js)  # 将页面往下滑动
         self.click_zfb_pay()
         time.sleep(2)
@@ -143,7 +144,7 @@ class Baziliunian(Base):
         self.send(self.ele_ddhsrk, self.get_text(self.ele_ddh))
         self.click(self.ele_ddtz)
         time.sleep(30)
-        js = "var q=document.documentElement.scrollTop=500"
+        js = "var q=document.documentElement.scrollTop=700"
         self.driver.execute_script(js)  # 将页面往下滑动
         self.click_wechat_pay()
         time.sleep(2)
@@ -160,7 +161,7 @@ class Baziliunian(Base):
         self.send(self.ele_ddhsrk, self.get_text(self.ele_ddh))
         self.click(self.ele_ddtz)
         time.sleep(30)
-        js = "var q=document.documentElement.scrollTop=500"
+        js = "var q=document.documentElement.scrollTop=700"
         self.driver.execute_script(js)  # 将页面往下滑动
         self.click_zfb_pay()
         time.sleep(2)

@@ -81,12 +81,14 @@ class Songshaoguangyuncheng(Base):
     def empty_name(self):
         '''不填写姓名'''
         self.click_sy_ljcs()
+        self.clear(self.ele_name)
         self.click_ljcs()
         time.sleep(0.5)
 
     def long_name(self):
         '''填写长度太长的姓名'''
         self.click_sy_ljcs()
+        self.clear(self.ele_name)
         self.input_name("若云若云若云若云若云")
         self.click_ljcs()
         time.sleep(0.5)
@@ -94,6 +96,7 @@ class Songshaoguangyuncheng(Base):
     def short_name(self):
         '''填写长度太短的姓名'''
         self.click_sy_ljcs()
+        self.clear(self.ele_name)
         self.input_name("若")
         self.click_ljcs()
         time.sleep(0.5)
@@ -101,6 +104,7 @@ class Songshaoguangyuncheng(Base):
     def english_name(self):
         '''填写英文名称'''
         self.click_sy_ljcs()
+        self.clear(self.ele_name)
         self.input_name("ruoyun")
         self.click_ljcs()
         time.sleep(0.5)
@@ -108,6 +112,7 @@ class Songshaoguangyuncheng(Base):
     def normal_information(self):
         '''填写正常的信息'''
         self.click_sy_ljcs()
+        self.clear(self.ele_name)
         self.input_name('若云')
         self.choose_birthday()
         self.click_ljcs()

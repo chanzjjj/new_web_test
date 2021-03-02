@@ -64,23 +64,27 @@ class Shiniandayun(Base):
 
     def empty_name(self):
         '''不输入姓名'''
+        self.clear(self.ele_name)
         self.click_ljcs()
         time.sleep(0.5)
 
     def short_name(self):
         '''姓名太短'''
+        self.clear(self.ele_name)
         self.input_name("云")
         self.click_ljcs()
         time.sleep(0.5)
 
     def long_name(self):
         '''姓名太长'''
+        self.clear(self.ele_name)
         self.input_name("若云若云若云若云")
         self.click_ljcs()
         time.sleep(0.5)
 
     def english_name(self):
         '''英文姓名太短'''
+        self.clear(self.ele_name)
         self.input_name('ruoyun')
         self.click_ljcs()
         time.sleep(0.5)
@@ -88,6 +92,7 @@ class Shiniandayun(Base):
 
     def normal_information(self):
         '''正常信息'''
+        self.clear(self.ele_name)
         self.input_name("若云")
         self.choose_birthday()
         self.click_ljcs()
@@ -127,7 +132,7 @@ class Shiniandayun(Base):
         self.click(self.ele_lsdd)
         self.send(self.ele_ddhsrk, self.get_text(self.ele_ddh))
         self.click(self.ele_ddtz)
-        time.sleep(30)
+        time.sleep(35)
         js = "var q=document.documentElement.scrollTop=500"
         self.driver.execute_script(js)  # 将页面往下滑动
         self.click_wechat_pay()
@@ -143,7 +148,7 @@ class Shiniandayun(Base):
         self.click(self.ele_lsdd)
         self.send(self.ele_ddhsrk, self.get_text(self.ele_ddh))
         self.click(self.ele_ddtz)
-        time.sleep(30)
+        time.sleep(35)
         js = "var q=document.documentElement.scrollTop=500"
         self.driver.execute_script(js)  # 将页面往下滑动
         self.click_zfb_pay()

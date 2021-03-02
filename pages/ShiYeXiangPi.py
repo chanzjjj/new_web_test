@@ -63,30 +63,35 @@ class Shiyexiangpi(Base):
 
     def short_name(self):
         '''名字太短'''
+        self.clear(self.ele_name)
         self.input_name("云")
         self.click_ljcs()
         time.sleep(0.5)
 
     def long_name(self):
         '''名字太长'''
+        self.clear(self.ele_name)
         self.input_name("若云若云若云若云")
         self.click_ljcs()
         time.sleep(0.5)
 
     def short_english_name(self):
         '''英文名字太短'''
+        self.clear(self.ele_name)
         self.input_name('s')
         self.click_ljcs()
         time.sleep(0.5)
 
     def long_english_name(self):
         '''英文名字太长'''
+        self.clear(self.ele_name)
         self.input_name('ruoyunruoyunruoyun')
         self.click_ljcs()
         time.sleep(0.5)
 
     def normal_information(self):
         '''正常信息'''
+        self.clear(self.ele_name)
         self.input_name('若云')
         self.choose_birthday()
         self.click_ljcs()
