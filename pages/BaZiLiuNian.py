@@ -143,7 +143,7 @@ class Baziliunian(Base):
         self.click(self.ele_lsdd)
         self.send(self.ele_ddhsrk, self.get_text(self.ele_ddh))
         self.click(self.ele_ddtz)
-        time.sleep(30)
+        time.sleep(35)
         js = "var q=document.documentElement.scrollTop=800"
         self.driver.execute_script(js)  # 将页面往下滑动
         self.click_wechat_pay()
@@ -160,7 +160,7 @@ class Baziliunian(Base):
         self.click(self.ele_lsdd)
         self.send(self.ele_ddhsrk, self.get_text(self.ele_ddh))
         self.click(self.ele_ddtz)
-        time.sleep(30)
+        time.sleep(35)
         js = "var q=document.documentElement.scrollTop=800"
         self.driver.execute_script(js)  # 将页面往下滑动
         self.click_zfb_pay()
