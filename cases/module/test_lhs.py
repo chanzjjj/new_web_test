@@ -7,6 +7,7 @@ class TestLunHuiShu():
     def test_01(self, lhs:Lunhuishu):
         '''不输入姓名是否正常'''
         lhs.open("/lunhuishu/index?channel=online_paytest")
+        time.sleep(1)
         lhs.empty_name()
         acturl_tips = lhs.get_tips()
         expect_tips = "请选择出生日期"
