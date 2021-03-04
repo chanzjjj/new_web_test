@@ -284,7 +284,7 @@ class Bazihehun(Base):
         time.sleep(2)
         self.click_gdzf()
         self.click_yl_pay()
-        time.sleep(2)
+        time.sleep(4)
 
     def dd_pp_pay(self):
         '''在历史订单中调起paypal支付'''
@@ -303,7 +303,7 @@ class Bazihehun(Base):
         time.sleep(2)
         self.click_gdzf()
         self.click_pp_pay()
-        time.sleep(2)
+        time.sleep(4)
 
 
 

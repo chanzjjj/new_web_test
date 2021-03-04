@@ -178,7 +178,7 @@ class Shiyexiangpi(Base):
         self.send(self.ele_ddhsrk, self.get_text(self.ele_ddh))
         self.click(self.ele_ddtz)
         time.sleep(2)
-        js = "var q=document.documentElement.scrollTop=500"
+        js = "var q=document.documentElement.scrollTop=600"
         self.driver.execute_script(js)  # 将页面往下滑动
         self.click(self.ele_gdzf)
         self.click(self.ele_ylzf)
@@ -195,7 +195,7 @@ class Shiyexiangpi(Base):
         self.send(self.ele_ddhsrk, self.get_text(self.ele_ddh))
         self.click(self.ele_ddtz)
         time.sleep(2)
-        js = "var q=document.documentElement.scrollTop=500"
+        js = "var q=document.documentElement.scrollTop=600"
         self.driver.execute_script(js)  # 将页面往下滑动
         self.click(self.ele_gdzf)
         self.click(self.ele_ppzf)
