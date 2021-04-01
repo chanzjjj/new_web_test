@@ -60,7 +60,7 @@ class TestShiNianDaYun():
         sndy.open("/jingpinshiniandayun/index?channel=online_paytest")
         sndy.zfb_pay()
         acturl_title = sndy.get_title()
-        expect_title = "支付宝 - 网上支付 安全快速！"
+        expect_title = "支付宝"
         assert acturl_title == expect_title
 
 
@@ -86,6 +86,6 @@ class TestShiNianDaYun():
         sndy.open("/jingpinshiniandayun/index?channel=online_paytest")
         sndy.dd_zfb_pay()
         acturl_title = sndy.get_title()
-        expect_title = "支付宝 - 网上支付 安全快速！"
+        expect_title = "支付宝"
         assert acturl_title == expect_title
 

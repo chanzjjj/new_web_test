@@ -62,7 +62,7 @@ class TestBaZiLiuNian():
         bzln.open("/baziliunianyunshi/index?channel=online_paytest")
         bzln.zfb_pay()
         acturl_title = bzln.get_title()
-        expect_title = "支付宝 - 网上支付 安全快速！"
+        expect_title = "支付宝"
         assert acturl_title == expect_title
 
     def test_08(self, bzln:Baziliunian):
@@ -87,5 +87,5 @@ class TestBaZiLiuNian():
         bzln.open("/baziliunianyunshi/index?channel=online_paytest")
         bzln.dd_zfb_pay()
         acturl_title = bzln.get_title()
-        expect_title = "支付宝 - 网上支付 安全快速！"
+        expect_title = "支付宝"
         assert acturl_title == expect_title

@@ -109,7 +109,7 @@ class TestBzZiHeHun():
         bzhh.open("/bazihehun/index?channel=online_paytest")
         bzhh.zfb_pay()
         acturl_tips = bzhh.get_title()
-        expect_title = "支付宝 - 网上支付 安全快速！"
+        expect_title = "支付宝"
         assert acturl_tips == expect_title
 
     def test_14(self, bzhh:Bazihehun):
@@ -153,7 +153,7 @@ class TestBzZiHeHun():
         bzhh.open("/bazihehun/index?channel=online_paytest")
         bzhh.dd_zfb_pay()
         acturl_tips = bzhh.get_title()
-        expect_title = "支付宝 - 网上支付 安全快速！"
+        expect_title = "支付宝"
         assert acturl_tips == expect_title
 
     def test_19(self, bzhh:Bazihehun):

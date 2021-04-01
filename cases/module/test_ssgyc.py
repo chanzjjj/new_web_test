@@ -61,7 +61,7 @@ class TestSongShaoGuangYunCheng():
         ssgyc.open("/dashiyunchengheji/index?channel=online_paytest")
         ssgyc.zfb_pay()
         acturl_title = ssgyc.get_title()
-        expect_title = "支付宝 - 网上支付 安全快速！"
+        expect_title = "支付宝"
         assert acturl_title == expect_title
 
     def test_08(self, ssgyc:Songshaoguangyuncheng):
@@ -86,5 +86,5 @@ class TestSongShaoGuangYunCheng():
         ssgyc.open("/dashiyunchengheji/index?channel=online_paytest")
         ssgyc.dd_zfb_pay()
         acturl_title = ssgyc.get_title()
-        expect_title = "支付宝 - 网上支付 安全快速！"
+        expect_title = "支付宝"
         assert acturl_title == expect_title

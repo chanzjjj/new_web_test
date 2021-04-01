@@ -59,7 +59,7 @@ class TestShiYeXiangPi():
         syxp.open("/shiyexiangpi/index?channel=online_paytest")
         syxp.zfb_pay()
         acturl_title = syxp.get_title()
-        expect_title = "支付宝 - 网上支付 安全快速！"
+        expect_title = "支付宝"
         assert acturl_title == expect_title
 
     def test_08(self, syxp: Shiyexiangpi):
@@ -103,7 +103,7 @@ class TestShiYeXiangPi():
         syxp.open("/shiyexiangpi/index?channel=online_paytest")
         syxp.dd_zfb_pay()
         acturl_title = syxp.get_title()
-        expect_title = "支付宝 - 网上支付 安全快速！"
+        expect_title = "支付宝"
         assert acturl_title == expect_title
 
     def test_13(self, syxp: Shiyexiangpi):

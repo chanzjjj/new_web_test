@@ -58,7 +58,7 @@ class TestGeRenZhanXing():
         grzx.open("/gerenzhanxing/index?channel=online_paytest")
         grzx.zfb_pay()
         acturl_title = grzx.get_title()
-        expect_title = "支付宝 - 网上支付 安全快速！"
+        expect_title = "支付宝"
         assert acturl_title == expect_title
 
     def test_08(self, grzx:Gerenzhanxing):
@@ -83,7 +83,7 @@ class TestGeRenZhanXing():
         grzx.open("/gerenzhanxing/index?channel=online_paytest")
         grzx.dd_zfb_pay()
         acturl_title = grzx.get_title()
-        expect_title = "支付宝 - 网上支付 安全快速！"
+        expect_title = "支付宝"
         assert acturl_title == expect_title
 
 

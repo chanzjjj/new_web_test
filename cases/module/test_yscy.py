@@ -59,7 +59,7 @@ class TestYiShengCaiYun():
         yscy.open("/yishengcaiyun/index?channel=online_paytest")
         yscy.zfb_pay()
         acturl_title = yscy.get_title()
-        expect_title = "支付宝 - 网上支付 安全快速！"
+        expect_title = "支付宝"
         assert acturl_title == expect_title
 
     def test_08(self, yscy:Yishengcaiyun):
@@ -103,7 +103,7 @@ class TestYiShengCaiYun():
         yscy.open("/yishengcaiyun/index?channel=online_paytest")
         yscy.dd_zfb_pay()
         acturl_title = yscy.get_title()
-        expect_title = "支付宝 - 网上支付 安全快速！"
+        expect_title = "支付宝"
         assert acturl_title == expect_title
 
     def test_13(self, yscy:Yishengcaiyun):

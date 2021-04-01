@@ -58,7 +58,7 @@ class TestMaiLingLingYunCheng():
         mllyc.open("/mllyuncheng/index?channel=online_paytest")
         mllyc.zfb_pay()
         acturl_title = mllyc.get_title()
-        expect_title = "支付宝 - 网上支付 安全快速！"
+        expect_title = "支付宝"
         assert acturl_title == expect_title
 
     def test_08(self, mllyc:Mailinglingyuncheng):
@@ -102,7 +102,7 @@ class TestMaiLingLingYunCheng():
         mllyc.open("/mllyuncheng/index?channel=online_paytest")
         mllyc.dd_zfb_pay()
         acturl_title = mllyc.get_title()
-        expect_title = "支付宝 - 网上支付 安全快速！"
+        expect_title = "支付宝"
         assert acturl_title == expect_title
 
     def test_13(self, mllyc:Mailinglingyuncheng):

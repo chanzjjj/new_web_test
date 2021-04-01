@@ -61,7 +61,7 @@ class TestBaZiYinYuan():
         bzyy.open("/baziyinyuan/index?channel=online_paytest")
         bzyy.zfb_pay()
         acturl_title = bzyy.get_title()
-        expect_title = "支付宝 - 网上支付 安全快速！"
+        expect_title = "支付宝"
         assert acturl_title == expect_title
 
     def test_08(self, bzyy:Baziyinyuan):
@@ -105,7 +105,7 @@ class TestBaZiYinYuan():
         bzyy.open("/baziyinyuan/index?channel=online_paytest")
         bzyy.dd_zfb_pay()
         acturl_title = bzyy.get_title()
-        expect_title = "支付宝 - 网上支付 安全快速！"
+        expect_title = "支付宝"
         assert acturl_title == expect_title
 
     def test_13(self, bzyy:Baziyinyuan):
