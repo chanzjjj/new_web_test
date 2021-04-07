@@ -59,8 +59,12 @@ class TestLunHuiShu():
         lhs.open("/lunhuishu/index?channel=online_paytest")
         lhs.zfb_pay()
         acturl_title = lhs.get_title()
-        expect_title = "支付宝"
-        assert acturl_title == expect_title
+        expect_title1 = "支付宝"
+        expect_title2 = "支付宝 - 网上支付 安全快速！"
+        if acturl_title == "支付宝":
+            assert acturl_title == expect_title1
+        else:
+            assert acturl_title == expect_title2
 
     def test_08(self, lhs:Lunhuishu):
         '''调起银联支付是否正常'''
@@ -103,8 +107,12 @@ class TestLunHuiShu():
         lhs.open("/lunhuishu/index?channel=online_paytest")
         lhs.dd_zfb_pay()
         acturl_title = lhs.get_title()
-        expect_title = "支付宝"
-        assert acturl_title == expect_title
+        expect_title1 = "支付宝"
+        expect_title2 = "支付宝 - 网上支付 安全快速！"
+        if acturl_title == "支付宝":
+            assert acturl_title == expect_title1
+        else:
+            assert acturl_title == expect_title2
 
     def test_13(self, lhs:Lunhuishu):
         '''调起历史订单的银联支付是否正常'''

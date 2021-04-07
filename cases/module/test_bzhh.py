@@ -108,9 +108,13 @@ class TestBzZiHeHun():
         '''调起支付宝支付是否正常'''
         bzhh.open("/bazihehun/index?channel=online_paytest")
         bzhh.zfb_pay()
-        acturl_tips = bzhh.get_title()
-        expect_title = "支付宝"
-        assert acturl_tips == expect_title
+        acturl_title = bzhh.get_title()
+        expect_title1 = "支付宝"
+        expect_title2 = "支付宝 - 网上支付 安全快速！"
+        if acturl_title == "支付宝":
+            assert acturl_title == expect_title1
+        else:
+            assert acturl_title == expect_title2
 
     def test_14(self, bzhh:Bazihehun):
         '''调起银联支付是否正常'''
@@ -152,9 +156,13 @@ class TestBzZiHeHun():
         '''在历史订单中调起支付宝支付是否正常'''
         bzhh.open("/bazihehun/index?channel=online_paytest")
         bzhh.dd_zfb_pay()
-        acturl_tips = bzhh.get_title()
-        expect_title = "支付宝"
-        assert acturl_tips == expect_title
+        acturl_title = bzhh.get_title()
+        expect_title1 = "支付宝"
+        expect_title2 = "支付宝 - 网上支付 安全快速！"
+        if acturl_title == "支付宝":
+            assert acturl_title == expect_title1
+        else:
+            assert acturl_title == expect_title2
 
     def test_19(self, bzhh:Bazihehun):
         '''在历史订单中调起银联支付是否正常'''

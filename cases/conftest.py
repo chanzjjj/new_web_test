@@ -30,7 +30,7 @@ def browser():
     if platform.system() == 'Windows':
         # windows系统
         # _driver = webdriver.Chrome()
-        #
+
         # 无界面模式
         chrome_options = Options()
         chrome_options.add_argument('--window-size=1920,1080')  # 设置当前窗口的宽度和高度

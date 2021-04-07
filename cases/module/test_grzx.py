@@ -58,8 +58,12 @@ class TestGeRenZhanXing():
         grzx.open("/gerenzhanxing/index?channel=online_paytest")
         grzx.zfb_pay()
         acturl_title = grzx.get_title()
-        expect_title = "支付宝"
-        assert acturl_title == expect_title
+        expect_title1 = "支付宝"
+        expect_title2 = "支付宝 - 网上支付 安全快速！"
+        if acturl_title == "支付宝":
+            assert acturl_title == expect_title1
+        else:
+            assert acturl_title == expect_title2
 
     def test_08(self, grzx:Gerenzhanxing):
         '''历史订单页面是否正常'''
@@ -83,8 +87,12 @@ class TestGeRenZhanXing():
         grzx.open("/gerenzhanxing/index?channel=online_paytest")
         grzx.dd_zfb_pay()
         acturl_title = grzx.get_title()
-        expect_title = "支付宝"
-        assert acturl_title == expect_title
+        expect_title1 = "支付宝"
+        expect_title2 = "支付宝 - 网上支付 安全快速！"
+        if acturl_title == "支付宝":
+            assert acturl_title == expect_title1
+        else:
+            assert acturl_title == expect_title2
 
 
 

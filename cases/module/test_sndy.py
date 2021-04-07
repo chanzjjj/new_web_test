@@ -60,8 +60,12 @@ class TestShiNianDaYun():
         sndy.open("/jingpinshiniandayun/index?channel=online_paytest")
         sndy.zfb_pay()
         acturl_title = sndy.get_title()
-        expect_title = "支付宝"
-        assert acturl_title == expect_title
+        expect_title1 = "支付宝"
+        expect_title2 = "支付宝 - 网上支付 安全快速！"
+        if acturl_title == "支付宝":
+            assert acturl_title == expect_title1
+        else:
+            assert acturl_title == expect_title2
 
 
     def test_08(self, sndy:Shiniandayun):
@@ -86,6 +90,10 @@ class TestShiNianDaYun():
         sndy.open("/jingpinshiniandayun/index?channel=online_paytest")
         sndy.dd_zfb_pay()
         acturl_title = sndy.get_title()
-        expect_title = "支付宝"
-        assert acturl_title == expect_title
+        expect_title1 = "支付宝"
+        expect_title2 = "支付宝 - 网上支付 安全快速！"
+        if acturl_title == "支付宝":
+            assert acturl_title == expect_title1
+        else:
+            assert acturl_title == expect_title2
 

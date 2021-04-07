@@ -59,8 +59,12 @@ class TestYiShengCaiYun():
         yscy.open("/yishengcaiyun/index?channel=online_paytest")
         yscy.zfb_pay()
         acturl_title = yscy.get_title()
-        expect_title = "支付宝"
-        assert acturl_title == expect_title
+        expect_title1 = "支付宝"
+        expect_title2 = "支付宝 - 网上支付 安全快速！"
+        if acturl_title == "支付宝":
+            assert acturl_title == expect_title1
+        else:
+            assert acturl_title == expect_title2
 
     def test_08(self, yscy:Yishengcaiyun):
         '''调起银联支付是否正常'''
@@ -103,8 +107,12 @@ class TestYiShengCaiYun():
         yscy.open("/yishengcaiyun/index?channel=online_paytest")
         yscy.dd_zfb_pay()
         acturl_title = yscy.get_title()
-        expect_title = "支付宝"
-        assert acturl_title == expect_title
+        expect_title1 = "支付宝"
+        expect_title2 = "支付宝 - 网上支付 安全快速！"
+        if acturl_title == "支付宝":
+            assert acturl_title == expect_title1
+        else:
+            assert acturl_title == expect_title2
 
     def test_13(self, yscy:Yishengcaiyun):
         '''调起历史订单的银联支付是否正常'''

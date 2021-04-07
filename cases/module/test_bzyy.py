@@ -61,8 +61,12 @@ class TestBaZiYinYuan():
         bzyy.open("/baziyinyuan/index?channel=online_paytest")
         bzyy.zfb_pay()
         acturl_title = bzyy.get_title()
-        expect_title = "支付宝"
-        assert acturl_title == expect_title
+        expect_title1 = "支付宝"
+        expect_title2 = "支付宝 - 网上支付 安全快速！"
+        if acturl_title == "支付宝":
+            assert acturl_title == expect_title1
+        else:
+            assert acturl_title == expect_title2
 
     def test_08(self, bzyy:Baziyinyuan):
         '''调起银联支付是否正常'''
@@ -105,8 +109,12 @@ class TestBaZiYinYuan():
         bzyy.open("/baziyinyuan/index?channel=online_paytest")
         bzyy.dd_zfb_pay()
         acturl_title = bzyy.get_title()
-        expect_title = "支付宝"
-        assert acturl_title == expect_title
+        expect_title1 = "支付宝"
+        expect_title2 = "支付宝 - 网上支付 安全快速！"
+        if acturl_title == "支付宝":
+            assert acturl_title == expect_title1
+        else:
+            assert acturl_title == expect_title2
 
     def test_13(self, bzyy:Baziyinyuan):
         '''调起历史订单的银联支付是否正常'''
