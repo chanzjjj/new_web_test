@@ -3,24 +3,25 @@ import time
 
 class Lunhuishu(Base):
     '''定义所需要的元素'''
-    ele_name = ("xpath","//*[@id='root']/div[3]/div[2]/div[1]/div[1]/div/input")     #姓名输入框
+    ele_sy_ljcs = ("xpath", '//*[@id="root"]/div[3]/div[2]/div/img') # 首页立即测算
+    ele_name = ("xpath",'//*[@id="root"]/div[1]/div[1]/div[1]/div/input')     #姓名输入框
     ele_boy = ("xpath", "//*[@id='root']/div[3]/div[2]/div[1]/div[2]/div/div[1]")  # 性别为男
     ele_girl = ("xpath", "//*[@id='root']/div[3]/div[2]/div[1]/div[2]/div/div[2]")  # 性别为女
-    ele_birthday = ("xpath", "//*[@id='root']/div[3]/div[2]/div[1]/div[3]/div")  # 出生日期选择框
-    ele_ljcs = ("xpath", "//*[@id='root']/div[3]/div[2]/div[2]/div")  # 立即测算按钮
-    ele_tips = ("xpath", "/html/body/div[5]/div/span/div/div/div/div")  # 姓名为空时的提示
-    ele_wc = ("xpath", "/html/body/div[3]/div[2]/div/div[1]/div[1]/div[3]")  # 完成按钮
-    ele_qrzq = ("xpath", "/html/body/div[3]/div[2]/div/div[2]/div[2]/div/button[2]")  # 确认正确按钮
+    ele_birthday = ("xpath", '//*[@id="root"]/div[1]/div[1]/div[3]/div')  # 出生日期选择框
+    ele_ljcs = ("xpath", '//*[@id="root"]/div[1]/div[2]/div/img')  # 立即测算按钮
+    ele_tips = ("xpath", '/html/body/div[4]/div/span/div/div/div/div')  # 姓名为空时的提示
+    ele_wc = ("xpath", '/html/body/div[3]/div[2]/div/div[1]/div[1]/div[3]')  # 完成按钮
+    ele_qrzq = ("xpath", '/html/body/div[3]/div[2]/div/div[2]/div[2]/div/button[2]')  # 确认正确按钮
+    ele_zfy_lqbg = ("xpath", '//*[@id="root"]/div[1]/div[2]/img') # 支付页领取报告
     ele_gdzf = ("xpath","//*[@id='pay']/div[3]/div/div[2]/div")         #更多方式按钮
-    ele_wxzf = ("xpath", "//*[@id='pay']/div[3]/div/div[2]/ul/li[2]/div[2]/div")  # 微信支付按钮
-    ele_zfbzf = ("xpath", "//*[@id='pay']/div[3]/div/div[2]/ul/li[1]/div[2]/div")  # 支付宝支付按钮
-    ele_ylzf = ("xpath", "//*[@id='pay']/div[3]/div/div[2]/ul/li[3]/div[2]/div")  # 银联支付方式
-    ele_ppzf = ("xpath", "//*[@id='pay']/div[3]/div/div[2]/ul/li[4]/div[2]/div")  # paypal支付按钮
-    ele_lsdd = ("xpath", '//*[@id="root"]/div[3]/div[2]/div[4]/div')  # 查询历史订单按钮
-    ele_ddh = ("xpath", "//*[@id='orderList']/li/div[3]/div[2]")  # 订单号
+    ele_wxzf = ("xpath", '//*[@id="wx"]')  # 微信支付按钮
+    ele_zfbzf = ("xpath", '//*[@id="ali"]')  # 支付宝支付按钮
+    ele_zfy_ljjs = ("xpath", '//*[@id="root"]/div[1]/div[3]/div[2]/div[2]/div[2]/div/div[2]/img') # 支付页-立即解锁
+    ele_lsdd = ("xpath", '//*[@id="root"]/div[3]/div[2]/div/div[2]/div')  # 查询历史订单按钮
+    ele_ddh = ("xpath", '//*[@id="orderList"]/li[1]/div[3]/div[2]')  # 订单号
     #ele_guanbi = (By.XPATH, "//*[@id='page-pay']/section/div[1]/div[2]/div[1]")  # 返回弹窗的关闭按钮
-    ele_ddhsrk = ("xpath", "//*[@id='query']/div[1]/section/div/div/input")  # 订单号输入框
-    ele_ddtz = ("xpath", "//*[@id='query']/div[1]/section/button")  # 订单跳转按钮
+    ele_ddhsrk = ("xpath", '//*[@id="query"]/div[1]/section/div/div/input')  # 订单号输入框
+    ele_ddtz = ("xpath", '//*[@id="query"]/div[1]/section/button')  # 订单跳转按钮
 
     def input_name(self, text):
         '''输入名字'''
@@ -51,11 +52,20 @@ class Lunhuishu(Base):
 
     def click_wechat_pay(self):
         '''点击微信支付'''
+        self.click(self.ele_zfy_lqbg)
+        time.sleep(1)
         self.click(self.ele_wxzf)
+        time.sleep(1)
+        self.click(self.ele_zfy_ljjs)
 
     def click_zfb_pay(self):
         '''点击支付宝支付'''
+        self.click(self.ele_zfy_lqbg)
+        time.sleep(1)
         self.click(self.ele_zfbzf)
+        time.sleep(1)
+        self.click(self.ele_zfy_ljjs)
+
 
     def empty_name(self):
         '''不填写姓名'''
@@ -65,6 +75,7 @@ class Lunhuishu(Base):
 
     def short_name(self):
         '''名字太短'''
+        self.click(self.ele_sy_ljcs)
         self.clear(self.ele_name)
         self.input_name("云")
         self.click_ljcs()
@@ -72,6 +83,7 @@ class Lunhuishu(Base):
 
     def long_name(self):
         '''名字太长'''
+        self.click(self.ele_sy_ljcs)
         self.clear(self.ele_name)
         self.input_name("若云若云若云若云")
         self.click_ljcs()
@@ -79,6 +91,7 @@ class Lunhuishu(Base):
 
     def short_english_name(self):
         '''英文名字太短'''
+        self.click(self.ele_sy_ljcs)
         self.clear(self.ele_name)
         self.input_name('s')
         self.click_ljcs()
@@ -86,6 +99,7 @@ class Lunhuishu(Base):
 
     def long_english_name(self):
         '''英文名字太长'''
+        self.click(self.ele_sy_ljcs)
         self.clear(self.ele_name)
         self.input_name('ruoyunruoyunruoyun')
         self.click_ljcs()
@@ -93,44 +107,29 @@ class Lunhuishu(Base):
 
     def normal_information(self):
         '''正常信息'''
+        self.click(self.ele_sy_ljcs)
         self.clear(self.ele_name)
         self.input_name('若云')
+        time.sleep(1)
         self.choose_birthday()
+        time.sleep(1)
         self.click_ljcs()
         time.sleep(2)
 
     def wechat_pay(self):
         '''微信支付'''
         self.normal_information()
-        time.sleep(2)
+        time.sleep(30)
         self.click_wechat_pay()
         time.sleep(2)
 
     def zfb_pay(self):
         '''支付宝支付'''
-        self.clear(self.ele_name)
         self.normal_information()
-        time.sleep(2)
+        time.sleep(30)
         self.click_zfb_pay()
         time.sleep(2)
 
-    def yl_pay(self):
-        '''银联支付'''
-        self.clear(self.ele_name)
-        self.normal_information()
-        time.sleep(2)
-        self.click(self.ele_gdzf)
-        self.click(self.ele_ylzf)
-        time.sleep(4)
-
-    def pp_pay(self):
-        '''paypal支付'''
-        self.clear(self.ele_name)
-        self.normal_information()
-        time.sleep(2)
-        self.click(self.ele_gdzf)
-        self.click(self.ele_ppzf)
-        time.sleep(4)
 
     def lsdd(self):
         '''历史订单'''
@@ -139,17 +138,17 @@ class Lunhuishu(Base):
 
     def dd_wechat_pay(self):
         '''历史订单的微信支付'''
-        self.clear(self.ele_name)
+        time.sleep(1)
         self.normal_information()
-        time.sleep(2)
         self.driver.back()
         time.sleep(1)
         self.driver.back()
         time.sleep(1)
+        self.driver.back()
         self.click(self.ele_lsdd)
         self.send(self.ele_ddhsrk, self.get_text(self.ele_ddh))
         self.click(self.ele_ddtz)
-        time.sleep(2)
+        time.sleep(30)
         js = "var q=document.documentElement.scrollTop=500"
         self.driver.execute_script(js)  # 将页面往下滑动
         self.click_wechat_pay()
@@ -157,57 +156,21 @@ class Lunhuishu(Base):
 
     def dd_zfb_pay(self):
         '''历史订单的支付宝支付'''
-        self.clear(self.ele_name)
+        time.sleep(1)
         self.normal_information()
         time.sleep(2)
         self.driver.back()
         time.sleep(1)
         self.driver.back()
         time.sleep(1)
+        self.driver.back()
         self.click(self.ele_lsdd)
         self.send(self.ele_ddhsrk, self.get_text(self.ele_ddh))
         self.click(self.ele_ddtz)
-        time.sleep(2)
+        time.sleep(30)
         js = "var q=document.documentElement.scrollTop=500"
         self.driver.execute_script(js)  # 将页面往下滑动
         self.click_zfb_pay()
         time.sleep(2)
 
-    def dd_yl_pay(self):
-        '''历史订单的银联支付'''
-        self.clear(self.ele_name)
-        self.normal_information()
-        time.sleep(2)
-        self.driver.back()
-        time.sleep(1)
-        self.driver.back()
-        time.sleep(1)
-        self.click(self.ele_lsdd)
-        self.send(self.ele_ddhsrk, self.get_text(self.ele_ddh))
-        self.click(self.ele_ddtz)
-        time.sleep(2)
-        js = "var q=document.documentElement.scrollTop=500"
-        self.driver.execute_script(js)  # 将页面往下滑动
-        self.click(self.ele_gdzf)
-        self.click(self.ele_ylzf)
-        time.sleep(4)
-
-    def dd_pp_pay(self):
-        '''历史订单的paypal支付'''
-        self.clear(self.ele_name)
-        self.normal_information()
-        time.sleep(2)
-        self.driver.back()
-        time.sleep(1)
-        self.driver.back()
-        time.sleep(1)
-        self.click(self.ele_lsdd)
-        self.send(self.ele_ddhsrk, self.get_text(self.ele_ddh))
-        self.click(self.ele_ddtz)
-        time.sleep(2)
-        js = "var q=document.documentElement.scrollTop=500"
-        self.driver.execute_script(js)  # 将页面往下滑动
-        self.click(self.ele_gdzf)
-        self.click(self.ele_ppzf)
-        time.sleep(4)
 

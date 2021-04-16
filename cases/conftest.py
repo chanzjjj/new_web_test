@@ -29,13 +29,13 @@ def browser():
     '''定义全局driver'''
     if platform.system() == 'Windows':
         # windows系统
-        # _driver = webdriver.Chrome()
+        _driver = webdriver.Chrome()
 
         # 无界面模式
-        chrome_options = Options()
-        chrome_options.add_argument('--window-size=1920,1080')  # 设置当前窗口的宽度和高度
-        chrome_options.add_argument('--headless')
-        _driver = webdriver.Chrome(chrome_options=chrome_options)
+        # chrome_options = Options()
+        # chrome_options.add_argument('--window-size=1920,1080')  # 设置当前窗口的宽度和高度
+        # chrome_options.add_argument('--headless')
+        # _driver = webdriver.Chrome(chrome_options=chrome_options)
 
 
     else:
